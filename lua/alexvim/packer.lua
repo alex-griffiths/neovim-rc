@@ -1,7 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -15,6 +15,16 @@ return require('packer').startup(function(use)
         requires = 'nvim-lua/plenary.nvim'
     })
 
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+        config = function()
+            require("nvim-tree").setup {}
+        end
+    }
+
     use({ 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } })
     use 'nvim-treesitter/nvim-treesitter-context'
     use 'theprimeagen/harpoon'
@@ -25,6 +35,11 @@ return require('packer').startup(function(use)
     use 'itchyny/lightline.vim'
     use 'rstacruz/vim-closer'
 
+    use { 'anuvyklack/pretty-fold.nvim',
+        config = function()
+            require('pretty-fold').setup()
+        end
+    }
     -- Lua
     use {
         "folke/todo-comments.nvim",
@@ -47,9 +62,9 @@ return require('packer').startup(function(use)
             {
                 -- Optional
                 'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
+                -- run = function()
+                --     pcall(vim.cmd, 'MasonUpdate')
+                -- end,
             },
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
