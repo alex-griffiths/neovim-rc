@@ -35,6 +35,11 @@ return require('packer').startup(function(use)
     use 'itchyny/lightline.vim'
     use 'rstacruz/vim-closer'
 
+    use {
+        'stevearc/aerial.nvim',
+        config = function() require('aerial').setup() end
+    }
+
     use { 'anuvyklack/pretty-fold.nvim',
         config = function()
             require('pretty-fold').setup()
