@@ -12,6 +12,34 @@ local lsp_format_on_save = function(bufnr)
     })
 end
 
+lsp.configure('yamlls', {
+    settings = {
+        yaml = {
+            keyOrdering = false,
+            customTags = {
+                "!fn",
+                "!And",
+                "!If",
+                "!Not",
+                "!Equals",
+                "!Or",
+                "!FindInMap sequence",
+                "!Base64",
+                "!Cidr",
+                "!Ref",
+                "!Ref Scalar",
+                "!Sub",
+                "!GetAtt",
+                "!GetAZs",
+                "!ImportValue",
+                "!Select",
+                "!Split",
+                "!Join sequence"
+            },
+        }
+    }
+})
+
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
