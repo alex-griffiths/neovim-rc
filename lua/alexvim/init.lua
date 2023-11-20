@@ -10,4 +10,4 @@ vim.g.neovide_cursor_vfx_mode = ""
 vim.g.neovide_transparency = 0.9
 vim.g.neovide_refresh_rate = 60
 
-vim.o.guifont = "Source Code Pro:h10"
+vim.o.guifont = "Anonymous Pro:h12"
