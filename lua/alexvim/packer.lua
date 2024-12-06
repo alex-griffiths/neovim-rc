@@ -11,14 +11,13 @@ return require('packer').startup(function(use)
     use { 'sainnhe/everforest', as = 'everforest' }
     use "rainglow/vim"
 
-    use 'natecraddock/workspaces.nvim'
-
     use({
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim'
     })
 
     use 'folke/zen-mode.nvim'
+    use 'github/copilot.vim'
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -39,6 +38,7 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-signify'
     use 'itchyny/lightline.vim'
     use 'rstacruz/vim-closer'
+    use 'm-demare/hlargs.nvim'
 
     use {
         'stevearc/aerial.nvim',
@@ -56,16 +56,13 @@ return require('packer').startup(function(use)
         requires = "nvim-lua/plenary.nvim",
         config = function()
             require("todo-comments").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
             }
         end
     }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        branch = 'v4.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required

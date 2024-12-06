@@ -10,5 +10,3 @@ require('aerial').setup({
 })
 
 vim.keymap.set('n', '<leader>ot', '<cmd>Telescope aerial<CR>')
--- vim.keymap.set('n', '<leader>ot', '<cmd>AerialToggle!<CR>')
--- vim.keymap.set('n', '<leader>of', '<cmd>AerialFocus!<CR>')

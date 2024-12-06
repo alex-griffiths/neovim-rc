@@ -1,6 +1,1 @@
 vim.keymap.set("n", "<leader>gs", ":vertical rightbelow Git<CR>")
--- vim.keymap.set("n", "<leader>gs", function()
---     vim.cmd.vertical()
---     vim.cmd.rightbelow()
---     vim.cmd.Git()
--- end)
